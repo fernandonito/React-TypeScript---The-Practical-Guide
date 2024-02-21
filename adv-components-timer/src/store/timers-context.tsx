@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useReducer } from 'react'
 
-type Timer = {
+export type Timer = {
   name: string
   duration: number
 }
@@ -83,7 +83,7 @@ export default function TimersContextProvider({
     timers: timersState.timers,
     isRunning: timersState.isRunning,
     addTimer: (timerData) => {
-      dispatch({ type: 'ADD_TIMER', payload: timerData})
+      dispatch({ type: 'ADD_TIMER', payload: timerData })
     },
     startTimers: () => {
       dispatch({ type: 'START_TIMERS' })
