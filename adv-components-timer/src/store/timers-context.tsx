@@ -42,7 +42,15 @@ type Action = {
 }
 
 function timersReducer(state: TimersState, action: Action): TimersState {
-
+  if (action.type === 'START_TIMERS') {
+    return { ...state, isRunning: true }
+  }
+  if (action.type === 'STOP_TIMERS') {
+    return { ...state, isRunning: false }
+  }
+  if (action.type === 'ADD_TIMER') {
+    return { ...state, timers: [...state.timers, {}] }
+  }
 }
 
 export default function TimersContextProvider({
@@ -54,13 +62,13 @@ export default function TimersContextProvider({
     timers: [],
     isRunning: true,
     addTimer: (timerData) => {
-      dispatch({ type: 'ADD_TIMER'})
+      dispatch({ type: 'ADD_TIMER' })
     },
     startTimers: () => {
-      dispatch({ type: 'START_TIMERS'})
+      dispatch({ type: 'START_TIMERS' })
     },
     stopTimers: () => {
-      dispatch({ type: 'STOP_TIMERS'})
+      dispatch({ type: 'STOP_TIMERS' })
     },
   }
 
