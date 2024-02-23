@@ -5,12 +5,12 @@ import BlogPosts, { type BlogPost } from './components/BlogPosts'
 import fetchingImg from './assets/data-fetching.png'
 import ErrorMessage from './components/ErrorMessage'
 
-// const rawDataBlogPostSchema = z.object({
-//   id: z.number(),
-//   userId: z.number(),
-//   title: z.string(),
-//   body: z.string(),
-// });
+// type RawDataBlogPost = {
+//   userId: number
+//   id: number
+//   title: string
+//   body: string
+// }
 
 // outside of App component function (since this doesn't need to be re-created all the time)
 const rawDataBlogPostSchema = z.object({
