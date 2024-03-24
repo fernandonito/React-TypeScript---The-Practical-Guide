@@ -10,6 +10,7 @@ type ProductProps = {
 };
 
 export default function Product({
+  id,
   image,
   title,
   price,
